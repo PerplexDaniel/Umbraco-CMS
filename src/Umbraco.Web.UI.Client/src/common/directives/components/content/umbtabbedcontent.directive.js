@@ -138,8 +138,8 @@
                 }
             );
         }
-
-        var directive = {
+        
+        var directive = {  
             restrict: 'E',
             replace: true,
             templateUrl: 'views/components/content/umb-tabbed-content.html',

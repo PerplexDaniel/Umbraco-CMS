@@ -19,6 +19,8 @@
                             <strong class="umb-control-required">*</strong>
                         </span>
 
+                        &ensp;<code><span ng-bind="property.culture == null ? 'null' : property.culture"></span> | <span ng-bind="property.segment == null ? 'null' : property.segment"></span></code>
+
                     </label>
 
                     <umb-property-actions actions="propertyActions"></umb-property-actions>

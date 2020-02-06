@@ -2,8 +2,8 @@
     <ng-form name="tabbedContentForm">
         <div class="umb-group-panel" retrive-dom-element="registerPropertyGroup(element[0], attributes.appAnchor)" data-app-anchor="{{group.id}}" data-element="group-{{group.alias}}" ng-repeat="group in content.tabs track by group.label">
 
-            <div class="umb-group-panel__header">
-                <div id="group-{{group.id}}">{{ group.label }}</div>
+            <div class="umb-group-panel__header">                
+                <div id="group-{{group.id}}">{{ group.label }}&ensp;<code><span ng-bind="content.language.culture == null ? 'null' : content.language.culture"></span> | <span ng-bind="content.segment == null ? 'null' : content.segment"></span></code></div>
             </div>
 
             <div class="umb-group-panel__content">
@@ -15,10 +15,9 @@
                     inherits-from="defaultVariant.language.name">
 
                     <div ng-class="{'o-40 cursor-not-allowed': variantNodeModel.variants.length > 1 && ((!content.language.isDefault && !property.culture) || (content.segment && !property.segment)) && !property.unlockInvariantValue}">
-                        <umb-property-editor
-                            model="property"
-                            preview="variantNodeModel.variants.length > 1 && ((!content.language.isDefault && !property.culture) || (content.segment && !property.segment)) && !property.unlockInvariantValue">
-                        </umb-property-editor>
+                        <umb-property-editor model="property"
+                                             preview="variantNodeModel.variants.length > 1 && ((!content.language.isDefault && !property.culture) || (content.segment && !property.segment)) && !property.unlockInvariantValue">
+                        </umb-property-editor>                        
                     </div>
 
                 </umb-property>

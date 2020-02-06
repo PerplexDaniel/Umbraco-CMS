@@ -42,11 +42,11 @@ namespace Segments.Features.Segments
                     propertyType.Variations |= ContentVariation.Segment;
                 }
 
-                // _contentTypeService.Save(contentType);
+                //_contentTypeService.Save(contentType);
 
-                homepage.SetValue("title", "Variant Title", culture: "en-US", segment: "b");
+                //homepage.SetValue("title", "Variant Title", culture: "en-US", segment: "b");
 
-                _contentService.SaveAndPublish(homepage);
+                //_contentService.SaveAndPublish(homepage);
 
                 scope.Complete();
             }
