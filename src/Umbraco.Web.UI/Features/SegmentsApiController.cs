@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using System.Web.Http;
+using Umbraco.Core;
 using Umbraco.Core.Models;
 using Umbraco.Core.Scoping;
 using Umbraco.Core.Services;
@@ -34,15 +35,16 @@ namespace Segments.Features.Segments
                 var contentType = _contentTypeService.Get(homepage.ContentTypeId);
 
                 // Add Segment variation type
-                contentType.Variations |= ContentVariation.Segment;
+                contentType.Variations = contentType.Variations.SetFlag(ContentVariation.Segment, true);
 
                 foreach (var propertyType in contentType.PropertyTypes)
                 {
                     // Add Segment variation to property
-                    propertyType.Variations |= ContentVariation.Segment;
+                    //propertyType.Variations |= ContentVariation.Segment;
+                    propertyType.Variations = propertyType.Variations.SetFlag(ContentVariation.Segment, true);
                 }
 
-                //_contentTypeService.Save(contentType);
+                _contentTypeService.Save(contentType);
 
                 //homepage.SetValue("title", "Variant Title", culture: "en-US", segment: "b");
 
