@@ -11,13 +11,13 @@
                     data-element="property-{{property.alias}}"
                     ng-repeat="property in group.properties track by property.alias"
                     property="property"
-                    show-inherit="propertyEditorDisabled(property)"
+                    show-inherit="propertyEditorIsDisabled(property)"
                     inherits-from="defaultVariant.language.name">
 
-                    <div ng-class="{'o-40 cursor-not-allowed': propertyEditorDisabled(property) }">
+                    <div ng-class="{'o-40 cursor-not-allowed': propertyEditorIsDisabled(property) }">
                         <umb-property-editor
                             model="property"
-                            preview="propertyEditorDisabled(property)">
+                            preview="propertyEditorIsDisabled(property)">
                         </umb-property-editor>
                     </div>
 

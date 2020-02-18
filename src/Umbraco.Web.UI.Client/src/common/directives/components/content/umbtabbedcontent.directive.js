@@ -138,7 +138,7 @@
                 }
             );
 
-            $scope.propertyEditorDisabled = function (property) {
+            $scope.propertyEditorIsDisabled = function (property) {
                 if (property.unlockInvariantValue) {
                     return false;
                 }
