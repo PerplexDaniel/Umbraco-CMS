@@ -168,7 +168,7 @@ namespace Umbraco.Web.Models.PublishedContent
                 {
                     culture = null;
                     segment = null;
-                    _variationContextAccessor.ContextualizeVariation(propertyType.Variations, ref culture, ref segment);
+                    _variationContextAccessor.ContextualizeVariation(propertyType.Variations, content.Id, ref culture, ref segment);
                 }
 
                 property = content?.GetProperty(alias);

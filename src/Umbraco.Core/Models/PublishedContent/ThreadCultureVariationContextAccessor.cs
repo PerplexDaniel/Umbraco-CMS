@@ -19,5 +19,8 @@ namespace Umbraco.Core.Models.PublishedContent
             get => _contexts.GetOrAdd(Thread.CurrentThread.CurrentUICulture.Name, culture => new VariationContext(culture));
             set => throw new NotSupportedException();
         }
+
+        public VariationContext GetVariationContext(int contentId)
+            => VariationContext;
     }
 }
