@@ -22,5 +22,8 @@ namespace Umbraco.Web.Models.PublishedContent
             get => Value;
             set => Value = value;
         }
+
+        public VariationContext GetVariationContext(int contentId)
+            => VariationContext;
     }
 }

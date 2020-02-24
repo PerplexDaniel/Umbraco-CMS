@@ -9,5 +9,7 @@
         /// Gets or sets the current <see cref="VariationContext"/>.
         /// </summary>
         VariationContext VariationContext { get; set; }
+
+        VariationContext GetVariationContext(int contentId);
     }
 }

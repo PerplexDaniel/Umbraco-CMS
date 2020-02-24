@@ -9,5 +9,8 @@ namespace Umbraco.Tests.Testing.Objects.Accessors
     {
         /// <inheritdoc />
         public VariationContext VariationContext { get; set; }
+
+        public VariationContext GetVariationContext(int contentId)
+            => VariationContext;
     }
 }

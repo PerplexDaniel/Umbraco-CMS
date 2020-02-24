@@ -24,5 +24,8 @@ namespace Umbraco.Web.Models.PublishedContent
             get => (VariationContext) HttpContextAccessor.HttpContext?.Items[ContextKey];
             set => HttpContextAccessor.HttpContext.Items[ContextKey] = value;
         }
+
+        public VariationContext GetVariationContext(int contentId)
+            => VariationContext;
     }
 }
