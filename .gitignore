@@ -167,3 +167,5 @@ build/temp/
 # eof
 /src/Umbraco.Web.UI.Client/TESTS-*.xml
 /src/ApiDocs/api/*
+db.mdf
+db_log.ldf
