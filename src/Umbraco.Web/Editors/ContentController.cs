@@ -706,7 +706,7 @@ namespace Umbraco.Web.Editors
                     {
                         if (variantCount > 1)
                         {
-                            var cultureErrors = ModelState.GetCulturesWithErrors(Services.LocalizationService, cultureForInvariantErrors);
+                            var cultureErrors = ModelState.GetCulturesWithErrors(cultureForInvariantErrors);
                             foreach (var c in contentItem.Variants.Where(x => x.Save && !cultureErrors.Contains(x.Culture)).Select(x => x.Culture).ToArray())
                             {
                                 AddSuccessNotification(notifications, c,
@@ -896,7 +896,7 @@ namespace Umbraco.Web.Editors
             {
                 if (variantCount > 1)
                 {
-                    var cultureErrors = ModelState.GetCulturesWithErrors(Services.LocalizationService, cultureForInvariantErrors);
+                    var cultureErrors = ModelState.GetCulturesWithErrors(cultureForInvariantErrors);
 
                     var savedWithoutErrors = contentItem.Variants
                         .Where(x => x.Save && !cultureErrors.Contains(x.Culture) && x.Culture != null)
@@ -1162,7 +1162,7 @@ namespace Umbraco.Web.Editors
 
             var mandatoryCultures = _allLangs.Value.Values.Where(x => x.IsMandatory).Select(x => x.IsoCode).ToList();
 
-            var cultureErrors = ModelState.GetCulturesWithErrors(Services.LocalizationService, cultureForInvariantErrors);
+            var cultureErrors = ModelState.GetCulturesWithErrors(cultureForInvariantErrors);
 
             //validate if we can publish based on the mandatory language requirements
             var canPublish = ValidatePublishingMandatoryLanguages(
@@ -1234,7 +1234,7 @@ namespace Umbraco.Web.Editors
 
             var mandatoryCultures = _allLangs.Value.Values.Where(x => x.IsMandatory).Select(x => x.IsoCode).ToList();
 
-            var cultureErrors = ModelState.GetCulturesWithErrors(Services.LocalizationService, cultureForInvariantErrors);
+            var cultureErrors = ModelState.GetCulturesWithErrors(cultureForInvariantErrors);
 
             //validate if we can publish based on the mandatory languages selected
             var canPublish = ValidatePublishingMandatoryLanguages(
@@ -1824,7 +1824,7 @@ namespace Umbraco.Web.Editors
             if (!ModelState.IsValid && display.Variants.Count() > 1)
             {
                 //Add any culture specific errors here
-                var cultureErrors = ModelState.GetCulturesWithErrors(Services.LocalizationService, cultureForInvariantErrors);
+                var cultureErrors = ModelState.GetCulturesWithErrors(cultureForInvariantErrors);
 
                 foreach (var cultureError in cultureErrors)
                 {
