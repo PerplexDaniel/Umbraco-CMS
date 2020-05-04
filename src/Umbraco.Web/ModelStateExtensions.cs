@@ -84,7 +84,7 @@ namespace Umbraco.Web
         /// A list of cultures that have property validation errors. The default culture will be returned for any invariant property errors.
         /// </returns>
         internal static IReadOnlyList<string> GetCulturesWithPropertyErrors(this System.Web.Http.ModelBinding.ModelStateDictionary modelState,
-            ILocalizationService localizationService, string cultureForInvariantErrors)
+            string cultureForInvariantErrors)
         {
             //Add any culture specific errors here
             var cultureErrors = modelState.Keys
@@ -112,10 +112,9 @@ namespace Umbraco.Web
         /// <returns>
         /// A list of cultures that have validation errors. The default culture will be returned for any invariant errors.
         /// </returns>
-        internal static IReadOnlyList<string> GetCulturesWithErrors(this System.Web.Http.ModelBinding.ModelStateDictionary modelState,
-            ILocalizationService localizationService, string cultureForInvariantErrors)
+        internal static IReadOnlyList<string> GetCulturesWithErrors(this System.Web.Http.ModelBinding.ModelStateDictionary modelState, string cultureForInvariantErrors)
         {
-            var propertyCultureErrors = modelState.GetCulturesWithPropertyErrors(localizationService, cultureForInvariantErrors);
+            var propertyCultureErrors = modelState.GetCulturesWithPropertyErrors(cultureForInvariantErrors);
 
             //now check the other special culture errors that are
             var genericCultureErrors = modelState.Keys
